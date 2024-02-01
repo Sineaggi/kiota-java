@@ -8,7 +8,7 @@
 		<Or>
 			<Class name="com.microsoft.kiota.http.middleware.UserAgentHandler" />
 			<Class name="com.microsoft.kiota.http.middleware.HeadersInspectionHandler" />
-			<Class name="com.microsoft.kiota.http.OkHttpRequestAdapter" />
+			<Class name="com.microsoft.kiota.http.JdkHttpRequestAdapter" />
 		</Or>
 	</Match>
 	<Match>
@@ -17,7 +17,7 @@
 	</Match>
 	<Match>
 		<Bug pattern="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" />
-		<Class name="com.microsoft.kiota.http.OkHttpRequestAdapter" />
+		<Class name="com.microsoft.kiota.http.JdkHttpRequestAdapter" />
 	</Match>
 	<Match>
 		<Bug pattern="CT_CONSTRUCTOR_THROW" />
