@@ -20,10 +20,10 @@ public class HeadersCompatibility {
      * @param headers the okhttp3 headers
      * @return the ResponseHeaders object
      */
-    @Nonnull public static ResponseHeaders getResponseHeaders(@Nonnull final okhttp3.Headers headers) {
+    @Nonnull public static ResponseHeaders getResponseHeaders(@Nonnull final java.net.http.HttpHeaders headers) {
         Objects.requireNonNull(headers);
         final ResponseHeaders responseHeaders = new ResponseHeaders();
-        headers.toMultimap()
+        headers.map()
                 .forEach(
                         (name, value) -> {
                             Objects.requireNonNull(name);
@@ -38,10 +38,10 @@ public class HeadersCompatibility {
      * @param headers the okhttp3 headers
      * @return the RequestHeaders object
      */
-    @Nonnull public static RequestHeaders getRequestHeaders(@Nonnull final okhttp3.Headers headers) {
+    @Nonnull public static RequestHeaders getRequestHeaders(@Nonnull final java.net.http.HttpHeaders headers) {
         Objects.requireNonNull(headers);
         final RequestHeaders requestHeaders = new RequestHeaders();
-        headers.toMultimap()
+        headers.map()
                 .forEach(
                         (name, value) -> {
                             Objects.requireNonNull(name);
